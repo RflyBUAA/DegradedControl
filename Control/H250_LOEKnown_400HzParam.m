@@ -10,7 +10,7 @@ MY_RATE_P = Pixhawk_CSC.Parameter( {single(12), 'MY_RATE_P'}  );
 MY_RATE_P_YAW = Pixhawk_CSC.Parameter( {single(0.3), 'MY_RATE_P_YAW'}  );
 
 MY_ATT_P = Pixhawk_CSC.Parameter( {single(8), 'MY_ATT_P'}  );
-MY_ATT_P_YAW = Pixhawk_CSC.Parameter( {single(0.0), 'MY_ATT_P_YAW'}  );
+MY_ATT_P_YAW = Pixhawk_CSC.Parameter( {single(0), 'MY_ATT_P_YAW'}  );
 
 MY_POS_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_POS_P'}  );
 MY_VEL_P = Pixhawk_CSC.Parameter( {single(1), 'MY_VEL_P'}  );
