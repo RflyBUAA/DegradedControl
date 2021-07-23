@@ -1,6 +1,7 @@
 % clear
 % clc
 % QGC Param
+
 MY_TAU_P_P = Pixhawk_CSC.Parameter( {single(1.5), 'MY_TAU_P_P'}  );
 MY_TAU_P_A = Pixhawk_CSC.Parameter( {single(0), 'MY_TAU_P_A'}  );
 MY_TAU_P_P_YAW = Pixhawk_CSC.Parameter( {single(0.1), 'MY_TAU_P_P_YAW'}  );
@@ -12,8 +13,8 @@ MY_RATE_P_YAW = Pixhawk_CSC.Parameter( {single(0.3), 'MY_RATE_P_YAW'}  );
 MY_ATT_P = Pixhawk_CSC.Parameter( {single(8), 'MY_ATT_P'}  );
 MY_ATT_P_YAW = Pixhawk_CSC.Parameter( {single(0), 'MY_ATT_P_YAW'}  );
 
-MY_POS_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_POS_P'}  );
-MY_VEL_P = Pixhawk_CSC.Parameter( {single(1), 'MY_VEL_P'}  );
+MY_POS_P = Pixhawk_CSC.Parameter( {single(0.5), 'MY_POS_P'}  );
+MY_VEL_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_VEL_P'}  );
 
 MY_SAT_AD = Pixhawk_CSC.Parameter({single(0.13), 'MY_SAT_AD'} );
 

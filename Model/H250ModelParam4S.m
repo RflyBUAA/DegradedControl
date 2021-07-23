@@ -83,10 +83,10 @@ ModelParam_WalkNoiseVarGPS_P0 = [0 0 0];
 ModelParam_NoiseVarGPS_V0 = [1e-5 1e-5 1e-5];
 ModelParam_WalkNoiseVarGPS_V0 = [0 0 0];
  % Acc
-ModelParam_NoiseVarAcc0 = [0.1 0.1 0.1];
+ModelParam_NoiseVarAcc0 = [0.01 0.01 0.01];
 ModelParam_WalkNoiseVarAcc0 = [0.001 0.001 0.001];
 ModelParam_PositionAcc0 = [0.071  0  -0.1365]; %加速度计相对形心的位置
-ModelParam_NoiseVarAcc1 = [0.1 0.1 0.1];
+ModelParam_NoiseVarAcc1 = [0.01 0.01 0.01];
 ModelParam_WalkNoiseVarAcc1 = [0.001 0.001 0.001];
 ModelParam_PositionAcc1 = [0.071  0  -0.1365]; %加速度计相对形心的位置
 
