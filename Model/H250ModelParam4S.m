@@ -36,7 +36,7 @@ ModelParam_envLatitude = 40.1540302;
 ModelParam_GPSLatLong = [ModelParam_envLatitude ModelParam_envLongitude];
 ModelParam_envAltitude = 0; %参考高度，即当前位置海拔高度，也可认为是起飞前初始高度。向下为正
 ModelParam_envC_d = 0.055;%0.055;
-ModelParam_envC_md = [0.001 0.001 0.00040];%[0.0035 0.0039 0.0034];
+ModelParam_envC_md = [0.001 0.001 0.00013];%[0.0035 0.0039 0.0034];
     % Wind Param
     ModelParam_timeSampTurbWind = 1/200;
 % Fail Param
@@ -62,7 +62,7 @@ ModelFail_env_P_wind = [0 0 0];
 %% 4.Airframe Model
 % Model Param
 ModelParam_Airframe_CMP = [0 0 0];
-ModelParam_Airframe_m = 0.752;%0.752;
+ModelParam_Airframe_m = 0.862;%0.752;
 ModelParam_Airframe_J = [0.0056 0 0;0 0.0056 0;0 0 0.0104];                                                
 % Fail Param
 ModelFail_Airframe_load_P = [0 0 0] + ModelParam_Airframe_CMP;
@@ -83,15 +83,15 @@ ModelParam_WalkNoiseVarGPS_P0 = [0 0 0];
 ModelParam_NoiseVarGPS_V0 = [1e-5 1e-5 1e-5];
 ModelParam_WalkNoiseVarGPS_V0 = [0 0 0];
  % Acc
-ModelParam_NoiseVarAcc0 = [0.01 0.01 0.01];
-ModelParam_WalkNoiseVarAcc0 = [0.001 0.001 0.001];
+ModelParam_NoiseVarAcc0 = [0.001 0.001 0.001];
+ModelParam_WalkNoiseVarAcc0 = [0.0001 0.0001 0.0001];
 ModelParam_PositionAcc0 = [0.071  0  -0.1365]; %加速度计相对形心的位置
 ModelParam_NoiseVarAcc1 = [0.01 0.01 0.01];
 ModelParam_WalkNoiseVarAcc1 = [0.001 0.001 0.001];
 ModelParam_PositionAcc1 = [0.071  0  -0.1365]; %加速度计相对形心的位置
 
  % Gyro
-ModelParam_NoiseVarGyro0 = [0.0005 0.0005 0.0005];
+ModelParam_NoiseVarGyro0 = [0.00005 0.00005 0.00005];
 ModelParam_WalkNoiseVarGyro0 = [0.00004 0.00004 0.00004];
 ModelParam_NoiseVarGyro1 = [0.004 0.004 0.004];
 ModelParam_WalkNoiseVarGyro1 = [0.00004 0.00004 0.00004];
