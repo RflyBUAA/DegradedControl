@@ -102,7 +102,7 @@ void LoggedTopics::add_default_topics()
 	add_topic("vehicle_status_flags");
 	add_topic("vtol_vehicle_status", 200);
 	add_topic("yaw_estimator_status", 200);
-  add_topic("unknown_logger", 10);
+  add_topic("unknown_logger", 20);
 
 	// multi topics
 	add_topic_multi("actuator_outputs", 100);

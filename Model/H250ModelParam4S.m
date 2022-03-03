@@ -2,7 +2,7 @@
 % clear
 clc
 load MavLinkStruct;
-Ts = 1/1000;
+Ts = 1/1000;%1/1000
 MulticopterLayoutConfig = 7;
 RflySimDisplayUAVType = 3;
 %% 1.Battery Model
@@ -36,9 +36,9 @@ ModelParam_envLatitude = 40.1540302;
 ModelParam_GPSLatLong = [ModelParam_envLatitude ModelParam_envLongitude];
 ModelParam_envAltitude = 0; %参考高度，即当前位置海拔高度，也可认为是起飞前初始高度。向下为正
 ModelParam_envC_d = 0.055;%0.055;
-ModelParam_envC_md = [0.001 0.001 0.00013];%[0.0035 0.0039 0.0034];
+ModelParam_envC_md = [0.001 0.001 0.0002];%[0.0035 0.0039 0.0034];
     % Wind Param
-    ModelParam_timeSampTurbWind = 1/200;
+    ModelParam_timeSampTurbWind = 1/50;
 % Fail Param
 ModelFail_env_P_wind = [0 0 0];
     % Wind Fail Param
@@ -62,7 +62,7 @@ ModelFail_env_P_wind = [0 0 0];
 %% 4.Airframe Model
 % Model Param
 ModelParam_Airframe_CMP = [0 0 0];
-ModelParam_Airframe_m = 0.862;%0.752;
+ModelParam_Airframe_m = 0.752;%0.752;
 ModelParam_Airframe_J = [0.0056 0 0;0 0.0056 0;0 0 0.0104];                                                
 % Fail Param
 ModelFail_Airframe_load_P = [0 0 0] + ModelParam_Airframe_CMP;
