@@ -3,6 +3,8 @@ float32 h1
 float32 h2
 float32 h1d
 float32 h2d
-float32[3] rate
-float32[3] ratedes
+float32[3] uref
+float32[3] uest
 float32[4] chvdes
+float32[4] tdes
+float32 psi
