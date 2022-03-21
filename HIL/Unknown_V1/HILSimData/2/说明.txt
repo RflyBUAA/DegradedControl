@@ -1,0 +1,9 @@
+本文件夹中存放了期望力矩中叠加了耦合项后的log
+
+叠加的耦合项为
+$$
+-\boldsymbol\omega\times \mathbf J \boldsymbol \omega
+$$
+
+
+增加该耦合项后取得了很好的仿真效果. 角速率更加稳定, 可能电机输出也更加稳定了
