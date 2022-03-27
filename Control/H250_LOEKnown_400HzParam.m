@@ -4,22 +4,22 @@
 % 在系统输入延迟相同的情况下(采样率0.025  delay 10ms(四个延迟)和采样率0.001 delay10ms(10个延迟)),
 % 采样率更高的更稳定. 同时延迟较大的情况下, 降低控制参数的大小更有助于收敛. 也就是延迟越大对参数最
 % 大值限制越强烈
-
-MY_TAU_P_P = Pixhawk_CSC.Parameter( {single(1.5), 'MY_TAU_P_P'}  );
-MY_TAU_P_A = Pixhawk_CSC.Parameter( {single(0), 'MY_TAU_P_A'}  );
-MY_TAU_P_P_YAW = Pixhawk_CSC.Parameter( {single(0.1), 'MY_TAU_P_P_YAW'}  );
-MY_TAU_P_A_YAW = Pixhawk_CSC.Parameter( {single(0), 'MY_TAU_P_A_YAW'}  );
-
-MY_RATE_P = Pixhawk_CSC.Parameter( {single(12), 'MY_RATE_P'}  );
-MY_RATE_P_YAW = Pixhawk_CSC.Parameter( {single(0.3), 'MY_RATE_P_YAW'}  );
-
 MY_ATT_P = Pixhawk_CSC.Parameter( {single(5), 'MY_ATT_P'}  );
 MY_ATT_P_YAW = Pixhawk_CSC.Parameter( {single(0), 'MY_ATT_P_YAW'}  );
 
-MY_POS_P = Pixhawk_CSC.Parameter( {single(0.5), 'MY_POS_P'}  );
-MY_VEL_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_VEL_P'}  );
+MY_POS_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_POS_P'}  );
+
+MY_RATE_P = Pixhawk_CSC.Parameter( {single(14), 'MY_RATE_P'}  );
+MY_RATE_P_YAW = Pixhawk_CSC.Parameter( {single(0.3), 'MY_RATE_P_YAW'}  );
 
 MY_SAT_AD = Pixhawk_CSC.Parameter({single(0.15), 'MY_SAT_AD'} );
+
+MY_TAU_P_A = Pixhawk_CSC.Parameter( {single(0), 'MY_TAU_P_A'}  );
+MY_TAU_P_A_YAW = Pixhawk_CSC.Parameter( {single(0), 'MY_TAU_P_A_YAW'}  );
+MY_TAU_P_P = Pixhawk_CSC.Parameter( {single(1.5), 'MY_TAU_P_P'}  );
+MY_TAU_P_P_YAW = Pixhawk_CSC.Parameter( {single(0.1), 'MY_TAU_P_P_YAW'}  );
+
+MY_VEL_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_VEL_P'}  );
 
 MY_K_W = Pixhawk_CSC.Parameter({single(0.0), 'MY_K_W'} );
 MY_K_CP = Pixhawk_CSC.Parameter({single(0.0), 'MY_K_CP'} );
@@ -30,14 +30,14 @@ Tmotorbar = (0.035);%模拟实际下的Tmotor的估计值
 
 Tf = 0.06;
 
-g  = (9.8);
-m  = (0.752);
-% m  = (1.31);
-c  = (0.0166);
-l  = (0.125);
-% l  = (0.225);
-J  = (diag([0.0056 0.0056 0.0104]));
-% J  = (diag([0.0194 0.0194 0.0291]));
+g = (9.8);
+m = (0.752);
+% m = (1.31);
+c = (0.0166);
+l = (0.125);
+% l = (0.225);
+J = (diag([0.0056 0.0056 0.0104]));
+% J = (diag([0.0194 0.0194 0.0291]));
 M = ([ 1          1          1         1;
       -0.7071*l  -0.7071*l   0.7071*l  0.7071*l;
        0.7071*l  -0.7071*l  -0.7071*l  0.7071*l;
@@ -48,7 +48,7 @@ M = ([ 1          1          1         1;
 %      0.25    1.4142/(4*l)    -1.4142/(4*l)     1/(4*c);   
 %      0.25    1.4142/(4*l)     1.4142/(4*l)    -1/(4*c)];
     
-T00  =single([m*g/4 m*g/4 m*g/4 m*g/4]');
+T00 = single([m*g/4 m*g/4 m*g/4 m*g/4]');
 
 %% EKF Param
 ModelParam_envLongitude = 116.2593683;
