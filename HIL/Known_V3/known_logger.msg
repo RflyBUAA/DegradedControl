@@ -1,7 +1,7 @@
 uint64 timestamp
-float32[4] chvdes
+#float32[4] chvdes
 float32[4] tdes
-float32 loe
+#float32 loe
 #float32[2] pq
 #float32[2] pqd
 #float32 r
@@ -11,4 +11,4 @@ float32 loe
 #float32 h2d
 #float32 fval
 #float32 iter
-#float32 jmin
+float32 psi
