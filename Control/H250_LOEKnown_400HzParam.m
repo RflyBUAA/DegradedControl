@@ -22,7 +22,7 @@ MY_TAU_P_P_YAW = Pixhawk_CSC.Parameter( {single(0.1), 'MY_TAU_P_P_YAW'}  );
 MY_VEL_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_VEL_P'}  );
 
 MY_K_W = Pixhawk_CSC.Parameter({single(0.0), 'MY_K_W'} );
-MY_K_CP = Pixhawk_CSC.Parameter({single(0.0), 'MY_K_CP'} );
+MY_K_CP = Pixhawk_CSC.Parameter({single(0.8), 'MY_K_CP'} );
 
 Ts = 1/400;
 Tmotorbar = (0.035);%模拟实际下的Tmotor的估计值
