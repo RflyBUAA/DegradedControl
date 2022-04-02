@@ -1,4 +1,4 @@
-//Known
+//论文1: 故障已知Known
 PARAM_DEFINE_FLOAT(MY_ATT_P, 5);//8//2
 PARAM_DEFINE_FLOAT(MY_ATT_P_YAW, 0.0);
 

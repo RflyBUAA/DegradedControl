@@ -1,8 +1,8 @@
-//Unknown ub = 5.5
+//论文2: 故障未知 Unknown ub = 5.5 IMU_INTEG_RATE = 400Hz
 PARAM_DEFINE_FLOAT(MY_ATT_P, 3);  //减小空气阻尼力矩系数后 改为3, 之前是5
 PARAM_DEFINE_FLOAT(MY_ATT_P_YAW, 0.0);
 
-PARAM_DEFINE_FLOAT(MY_K_CP, 0.7);//0.7效果最合适此时2 3(顺时针数)两个旋翼转速最为接近, 0.6太小, 1太大会剧烈抖动
+PARAM_DEFINE_FLOAT(MY_K_CP, 0.6);//0.6效果最合适此时2 3(顺时针数)两个旋翼转速最为接近, 更小甚至为0的情况下会不会更好? 之前问题的关键很有可能是IMU_INTEG_RATE参数默认为200Hz的缘故
 
 PARAM_DEFINE_FLOAT(MY_POS_P, 0.5);
 
