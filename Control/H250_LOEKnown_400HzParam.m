@@ -22,18 +22,20 @@ MY_TAU_P_P_YAW = Pixhawk_CSC.Parameter( {single(0.1), 'MY_TAU_P_P_YAW'}  );
 MY_VEL_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_VEL_P'}  );
 
 % MY_K_W = Pixhawk_CSC.Parameter({single(0.0), 'MY_K_W'} );
-MY_K_CP = Pixhawk_CSC.Parameter({single(0.8), 'MY_K_CP'} );
+MY_K_CP = Pixhawk_CSC.Parameter({single(0.4), 'MY_K_CP'} );
 
-MY_UL = Pixhawk_CSC.Parameter({single(1000), 'MY_UL'} );
+% MY_UL = Pixhawk_CSC.Parameter({single(1000), 'MY_UL'} );
 MY_W_T = Pixhawk_CSC.Parameter({single(0), 'MY_W_T'} );
+MY_W_S = Pixhawk_CSC.Parameter({single(0), 'MY_W_S'} );
+
 Ts = 1/400;
 Tmotorbar = (0.035);%模拟实际下的Tmotor的估计值
 % Tmotorbar = (0.0214);%模拟实际下的Tmotor的估计值
 
-Tf = 0.06;
+Tf = 0.06;% 之前都是0.06, 但是怀疑这个参数太大, 在大转速的情况下会导致延迟过大
 
 g = (9.8);
-m = (0.752);
+m = (0.700);
 % m = (1.31);
 c = (0.0166);
 l = (0.125);
