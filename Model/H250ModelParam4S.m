@@ -62,7 +62,7 @@ ModelFail_env_P_wind = [0 0 0];
 %% 4.Airframe Model
 % Model Param
 ModelParam_Airframe_CMP = [0 0 0];
-ModelParam_Airframe_m = 0.752;%0.752;
+ModelParam_Airframe_m = 0.700;%0.752;
 ModelParam_Airframe_J = [0.0056 0 0;0 0.0056 0;0 0 0.0104];                                                
 % Fail Param
 ModelFail_Airframe_load_P = [0 0 0] + ModelParam_Airframe_CMP;
