@@ -20,7 +20,7 @@ ModelParam_motorCr = 0.0;
 ModelParam_motorWb = 0;
 ModelParam_motorRateCurveCoeffi = [-2143 5113 -458.4];%[p1 p2 p3]: f(x) = p1*x^2 + p2*x + p3
 
-ModelParam_motorTc = 0.032;
+ModelParam_motorTc = 0.025;
 ModelParam_rotorCt = 1.345e-06;
 ModelParam_motorJm = 8.8493e-06;
 % Fail Param
