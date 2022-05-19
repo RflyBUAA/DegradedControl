@@ -12,21 +12,23 @@ MY_RATE_P_YAW = Pixhawk_CSC.Parameter( {single(0.0), 'MY_RATE_P_YAW'}  );
 MY_ATT_P = Pixhawk_CSC.Parameter( {single(3), 'MY_ATT_P'}  );
 MY_ATT_P_YAW = Pixhawk_CSC.Parameter( {single(0.0), 'MY_ATT_P_YAW'}  );
 
-MY_POS_P = Pixhawk_CSC.Parameter( {single(0.5), 'MY_POS_P'}  );
-MY_VEL_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_VEL_P'}  );
+MY_POS_P = Pixhawk_CSC.Parameter( {single(0.1), 'MY_POS_P'}  );
+MY_VEL_P = Pixhawk_CSC.Parameter( {single(0.15), 'MY_VEL_P'}  );
+MY_POS_ALT = Pixhawk_CSC.Parameter( {single(0.6), 'MY_POS_ALT'}  );
+MY_VEL_ALT = Pixhawk_CSC.Parameter( {single(1), 'MY_VEL_ALT'}  );
 
 MY_SAT_AD = Pixhawk_CSC.Parameter({single(0.13), 'MY_SAT_AD'} );
 
-MY_K_CP = Pixhawk_CSC.Parameter({single(0.7), 'MY_K_CP'} );
+MY_K_CP = Pixhawk_CSC.Parameter({single(0.6), 'MY_K_CP'} );
 
 Ts = 1/400;%1/400
 % 虽然理论推导显示，Tmotor=Tmotorbar=Tkd
 % 但是实际仿真发现，Tmotorbar=Tkd>Tmotor的时候位置收敛会变快，超调会减少，其他参数搭配方式目前还没尝试
-Tmotorbar = (0.032);%模拟实际下的Tmotor的估计值
+Tmotorbar = (0.025);%0.032模拟实际下的Tmotor的估计值
 
 Tf = 0.06;
 
-g  = (9.8);
+g  = (9.81);
 m  = (0.752);
 c  = (0.0166);
 l  = (0.125);

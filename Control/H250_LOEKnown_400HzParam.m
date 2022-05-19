@@ -19,7 +19,7 @@ MY_SAT_AD = Pixhawk_CSC.Parameter({single(0.13), 'MY_SAT_AD'} );
 MY_TAU_P_A = Pixhawk_CSC.Parameter( {single(0), 'MY_TAU_P_A'}  );
 MY_TAU_P_A_YAW = Pixhawk_CSC.Parameter( {single(0), 'MY_TAU_P_A_YAW'}  );
 MY_TAU_P_P = Pixhawk_CSC.Parameter( {single(1.2), 'MY_TAU_P_P'}  );
-MY_TAU_P_P_YAW = Pixhawk_CSC.Parameter( {single(1.2), 'MY_TAU_P_P_YAW'}  );
+MY_TAU_P_P_YAW = Pixhawk_CSC.Parameter( {single(0.1), 'MY_TAU_P_P_YAW'}  );
 
 MY_VEL_P = Pixhawk_CSC.Parameter( {single(0.8), 'MY_VEL_P'}  );
 MY_VEL3_I = Pixhawk_CSC.Parameter( {single(0), 'MY_VEL3_I'}  );
@@ -27,7 +27,7 @@ MY_VEL3_I = Pixhawk_CSC.Parameter( {single(0), 'MY_VEL3_I'}  );
 % MY_K_W = Pixhawk_CSC.Parameter({single(0.0), 'MY_K_W'} );
 
 MY_K_CP = Pixhawk_CSC.Parameter({single(0.8), 'MY_K_CP'} );
-MY_K_DVZ = Pixhawk_CSC.Parameter({single(0.3), 'MY_K_DVZ'} );
+MY_K_DVZ = Pixhawk_CSC.Parameter({single(1), 'MY_K_DVZ'} );
 
 % MY_UL = Pixhawk_CSC.Parameter({single(1000), 'MY_UL'} );
 % MY_W_T = Pixhawk_CSC.Parameter({single(0), 'MY_W_T'} );

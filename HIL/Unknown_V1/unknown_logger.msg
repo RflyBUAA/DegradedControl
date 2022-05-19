@@ -8,3 +8,5 @@ float32[3] uest
 float32[4] chvdes
 float32[4] tdes
 float32 psi
+float32[2] pos
+float32[2] posd
