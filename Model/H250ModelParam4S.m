@@ -21,8 +21,8 @@ ModelParam_motorWb = 0;
 ModelParam_motorRateCurveCoeffi = [-2143 5113 -458.4];%[p1 p2 p3]: f(x) = p1*x^2 + p2*x + p3
 
 ModelParam_motorTc = 0.025;
-ModelParam_rotorCt = 1.345e-06;
-ModelParam_motorJm = 8.8493e-06;
+ModelParam_rotorCt = 1.345;%这是放大1e6后的结果
+ModelParam_motorJm = 8.8493;%这是放大1e6后的结果
 % Fail Param
 ModelFail_motor_isEnable = 0;
 ModelFail_motor_kw  = [1 1 1 1 1 1 1 1];%[0,1]
@@ -62,7 +62,7 @@ ModelFail_env_P_wind = [0 0 0];
 %% 4.Airframe Model
 % Model Param
 ModelParam_Airframe_CMP = [0 0 0];
-ModelParam_Airframe_m = 0.700;%0.752;
+ModelParam_Airframe_m = 0.710;%0.752;
 ModelParam_Airframe_J = [0.0056 0 0;0 0.0056 0;0 0 0.0104];                                                
 % Fail Param
 ModelFail_Airframe_load_P = [0 0 0] + ModelParam_Airframe_CMP;
