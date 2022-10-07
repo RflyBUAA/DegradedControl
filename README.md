@@ -1,4 +1,45 @@
-# 源码更新记录
+# 更新记录
+
+### 20221007
+
+**故障未知的控制器新增了两套仿真文件**，一个是V2一个是V3都位于Control文件夹，V1是之前的旧版本进行过户外实飞实验验证过得。V3则是根据新修改论文做出的调整后的版本
+
+##### 1. FTC_UnknownV3.slx文件对应的算法理论上为如下形式，具体还需要参考具体论文
+
+1. 扰动估计为
+
+$$
+\begin{aligned}
+            \hat{\mathbf{d}}_1 &= \frac{1}{\epsilon s+1}(\mathbf{u}_{\mathrm{d},1} - \mathbf{u}_1)\\
+            &=\frac{1}{\epsilon s+1}\mathbf{u}_{\mathrm{d},1} - \frac{\tau_\mathrm{m}s+1}{\epsilon s+1}\mathbf{u}_\mathrm{dyn}\\
+            &=\frac{1}{\epsilon s+1}\mathbf{E}_1\mathbf{M}\mathbf{T}_\mathrm{d} -\mathbf{B}_2^{-1}\frac{s(\tau_\mathrm{m}s+1)}{\epsilon s+1}\mathbf{x}_2\\
+            &\quad +\frac{\tau_\mathrm{m}s+1}{\epsilon s+1}\mathbf{B}_2^{-1}(\mathbf{A}_2\mathbf{x}_2+\mathbf{D}_2)\\
+            \hat{{d}}_{\tau_r} &= \frac{1}{\epsilon s+1}\mathbf{E}_2\mathbf{M}\mathbf{T}_\mathrm{d}- J_z\frac{s(\tau_\mathrm{m}s+1)}{\epsilon s+1}r + \frac{\tau_\mathrm{m}s+1}{\epsilon s+1}(J_x-J_y)pq
+        \end{aligned}
+$$
+
+2. 控制器设计为
+
+$$
+\begin{aligned}
+        \mathbf{u}_{0,1} &= \frac{1}{\epsilon s+1}\mathbf{u}_{\mathrm{c},1}+\hat{\mathbf{d}}_1\\
+    \tau_{r,0} &= \frac{1}{\epsilon s+1}\tau_{r,\mathrm{c}}+\hat{d}_{\tau_r}
+    \end{aligned}
+$$
+
+3. 虚拟控制反馈
+
+$$
+\mathbf{u}_{\mathrm{d}}=\mathbf{K}_\mathrm{rotor}(\mathbf{u}_{0}-\frac{1}{\epsilon s +1}\mathbf{u}_{\mathrm{d}})
+$$
+
+##### 2. FTC_UnknownV2.slx与前面的类似，
+
+与前面的类似，但是V2做了妥协，因为$\frac{s(\tau_m s+1)}{\epsilon s+1}$在数学上不好实现，前面的实现采用的是数值微分实现的。而V2的思路则是在原来基础上对所有符号（除了$\mathbf{u}_\mathrm{c}$相关的（当然加上也可以不过会进一步拖慢响应速度））乘以$\tau_m s+1$，来实现控制器，这样的结果就是会影响总体响应速度，但是依旧可以HIL仿真通过验证，其实效果和V1是相同的，V2相比V1只是在控制器上做了稳定性证明，添加了一下补偿项，但是依旧需要耦合项进行调节，区别是这里耦合项的系数由原来的0.6变成了-0.8或者-1.0。
+
+##### 3. 总之
+
+V3的控制器的实现是最尊重原文的，并且实现起来相比V2、V1，相同参数情况下更能实现旋翼的瞬间完全失效，而不是逐步失效的那种情况。
 
 ### 20221006
 
