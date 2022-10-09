@@ -53,7 +53,8 @@ ylabel('$h_3$','Interpreter','latex')
 xlim([50,80])
 legend('$6$','Orientation',"horizontal",'Interpreter',"latex",'Location',"best")
 %% 处理数据 图二
-figure(2)
+s = figure(2);
+s.Position = [0 0 13.2 10];
 clf
 plot(time_2-50, h3_2);
 
@@ -67,6 +68,7 @@ hold on
 plot(time_5-50, h3_5);
 xlim([0,30])
 xlabel('Relative Time [s]','Interpreter',"latex")
+ylim([0.91,1])
 ylabel('$n_{3,z}$','Interpreter','latex')
 legend(...
     '$\mathbf{\Lambda} = \mathrm{diag}(0,0.6,0.5,1)$', ...
