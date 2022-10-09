@@ -1,6 +1,6 @@
 uint64 timestamp
 #float32 psi
-float32[4] tdes
+#float32[4] tdes
 #float32 iter
 #float32[4] chvdes
 #float32[2] pq
@@ -11,7 +11,8 @@ float32[4] tdes
 #float32 h2d
 #float32[2] pos
 #float32[2] posd
-float32[3] u_c
-float32[3] hat_d
-float32[3] u
-float32[3] d
+#float32[3] u_c
+#float32[3] hat_d
+#float32[3] u
+#float32[3] d
+float32 h3
