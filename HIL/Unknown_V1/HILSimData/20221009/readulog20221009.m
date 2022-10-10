@@ -8,6 +8,7 @@ clc
 [time_3, h3_3] = obtainh3("log_3_2021-6-30-08-01-34.ulg"); %$\mathbf{\Lambda} = diag(0,0.7,1,0.6)$
 [time_4, h3_4] = obtainh3("log_4_2021-6-30-08-01-30.ulg"); %$\mathbf{\Lambda} = diag(0,0.6,1,0.5)$
 [time_5, h3_5] = obtainh3("log_5_2021-6-30-08-01-28.ulg"); %$\mathbf{\Lambda} = diag(0,0.6,0.6,0.5)$
+[time_6, h3_6] = obtainh3("log_6_2021-6-30-08-04-24.ulg"); %$\mathbf{\Lambda} = diag(0,0,0,1)$
 %% 处理数据 图一
 figure(1)
 clf
@@ -66,15 +67,20 @@ plot(time_4-53, h3_4);
 
 hold on
 plot(time_5-50, h3_5);
+
+hold on
+plot(time_6-210, h3_6);
+
 xlim([0,30])
 xlabel('Relative Time [s]','Interpreter',"latex")
-ylim([0.91,1])
+ylim([0.9,1])
 ylabel('$n_{3,z}$','Interpreter','latex')
 legend(...
     '$\mathbf{\Lambda} = \mathrm{diag}(0,0.6,0.5,1)$', ...
     '$\mathbf{\Lambda} = \mathrm{diag}(0,0.7,1,0.6)$', ...
     '$\mathbf{\Lambda} = \mathrm{diag}(0,0.6,1,0.5)$', ...
     '$\mathbf{\Lambda} = \mathrm{diag}(0,0.6,0.6,0.5)$', ...
+    '$\mathbf{\Lambda} = \mathrm{diag}(0,0,0,1)$', ...
     'Interpreter',"latex",'Location',"best")
 
 %% read h3 from unknown_logger
