@@ -16,3 +16,4 @@ uint64 timestamp
 #float32[3] u
 #float32[3] d
 float32 h3
+float32[3] u_d
