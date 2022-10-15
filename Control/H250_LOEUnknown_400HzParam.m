@@ -19,7 +19,7 @@ MY_VEL_ALT = Pixhawk_CSC.Parameter( {single(1), 'MY_VEL_ALT'}  );
 
 MY_SAT_AD = Pixhawk_CSC.Parameter({single(0.13), 'MY_SAT_AD'} );
 
-MY_K_CP = Pixhawk_CSC.Parameter({single(-1.4), 'MY_K_CP'} );
+MY_K_CP = Pixhawk_CSC.Parameter({single(-1), 'MY_K_CP'} );
 
 Ts = 1/400;%1/400
 % 虽然理论推导显示，Tmotor=Tmotorbar=Tkd
