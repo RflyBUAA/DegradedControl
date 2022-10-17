@@ -2,7 +2,7 @@
 PARAM_DEFINE_FLOAT(MY_ATT_P, 3);  //减小空气阻尼力矩系数后 改为3, 之前是5
 PARAM_DEFINE_FLOAT(MY_ATT_P_YAW, 0.0);
 
-PARAM_DEFINE_FLOAT(MY_K_CP, 0.6);//0.6效果最合适此时2 3(顺时针数)两个旋翼转速最为接近, 更小甚至为0的情况下会不会更好? 之前问题的关键很有可能是IMU_INTEG_RATE参数默认为200Hz的缘故
+PARAM_DEFINE_FLOAT(MY_K_CP, -1.4);//0.6效果最合适此时2 3(顺时针数)两个旋翼转速最为接近, 更小甚至为0的情况下会不会更好? 之前问题的关键很有可能是IMU_INTEG_RATE参数默认为200Hz的缘故
 
 PARAM_DEFINE_FLOAT(MY_POS_P, 0.3);
 PARAM_DEFINE_FLOAT(MY_POS_ALT, 0.6);
