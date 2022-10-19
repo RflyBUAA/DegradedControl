@@ -19,7 +19,7 @@
 %% log序号中：10-13是K_CP=0的四种情况  14-17是K_CP=0.6且耦合项乘积采用的是omega-omega_d的形式  18-21是K_CP=0.6且耦合项乘积采用的是omega的形式
 clear
 clc
-ulogOBJ = ulogreader("log_18_2021-6-30-08-01-24.ulg");
+ulogOBJ = ulogreader("log_3_2021-6-30-08-01-46.ulg");
 msg = readTopicMsgs(ulogOBJ);
 % 获取unknown_logger数据
 unknown_logger = msg.TopicMessages{findtopic(msg.TopicNames, 'unknown_logger')};
