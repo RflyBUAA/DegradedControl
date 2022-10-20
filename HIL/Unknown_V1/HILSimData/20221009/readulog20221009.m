@@ -68,11 +68,11 @@ plot(time_4-53, h3_4);
 hold on
 plot(time_5-50, h3_5);
 
-hold on
-plot(time_6-210, h3_6);
+% hold on
+% plot(time_6-210, h3_6);
 
 xlim([0,30])
-xlabel('Relative Time [s]','Interpreter',"latex")
+xlabel('Time [s]','Interpreter',"latex")
 ylim([0.9,1])
 ylabel('$n_{3,z}$','Interpreter','latex')
 legend(...
@@ -80,7 +80,6 @@ legend(...
     '$\mathbf{\Lambda} = \mathrm{diag}(0,0.7,1,0.6)$', ...
     '$\mathbf{\Lambda} = \mathrm{diag}(0,0.6,1,0.5)$', ...
     '$\mathbf{\Lambda} = \mathrm{diag}(0,0.6,0.6,0.5)$', ...
-    '$\mathbf{\Lambda} = \mathrm{diag}(0,0,0,1)$', ...
     'Interpreter',"latex",'Location',"best")
 
 %% read h3 from unknown_logger

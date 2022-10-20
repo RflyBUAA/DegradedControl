@@ -1,5 +1,5 @@
 %% 
-% 障已知的实验, log2时间久
+% 未知的实验, log2时间久
 clear
 clc
 ulogOBJ = ulogreader("log_1_2022-5-19-22-25-06.ulg");

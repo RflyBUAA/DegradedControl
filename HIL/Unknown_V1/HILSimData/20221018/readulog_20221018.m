@@ -1,4 +1,5 @@
-% 故障系数切换代码如下，电机顺序为从右前方顺时针计数依次为1 2 3 4 
+% 力矩AMS汇总
+% 电机顺序为从右前方顺时针计数依次为1 2 3 4 
 clear
 clc
 figure_configuration_IEEE_standard
@@ -149,6 +150,97 @@ annotation('arrow',[0.594551282051282 0.594551282051282],...
 legend("\#1 \#2 \#3 failure","\#3 \#4 \#1 failure","\#2 \#1 \#4 failure","\#4 \#3 \#2 failure", ...
     'Position',[0.293888591949356 0.101149425518512 0.63296705436521 0.124404766029782],...
     'Interpreter',"latex",'Orientation','horizontal','NumColumns',2);
+
+%% 画图5
+s =figure(5);
+s.Position(4) = 8.0;
+[u] = readtdes("log_0_2021-6-30-08-01-52.ulg",diag([0,1,1,1]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'^')
+hold on
+
+[u] = readtdes("log_4_2021-6-30-08-08-14.ulg",diag([1,1,0,1]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'^')
+hold on
+
+[u] = readtdes("log_7_2021-6-30-08-14-34.ulg",diag([1,0,1,1]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'^')
+hold on
+
+[u] = readtdes("log_11_2021-6-30-08-21-04.ulg",diag([1,1,1,0]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'^')
+hold on
+
+[u] = readtdes("log_1_2021-6-30-08-02-22.ulg",diag([0,0,1,1]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'x')
+hold on
+
+[u] = readtdes("log_5_2021-6-30-08-08-44.ulg",diag([1,1,0,0]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'x')
+hold on
+
+[u] = readtdes("log_8_2021-6-30-08-15-04.ulg",diag([0,0,1,1]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'x')
+hold on
+
+[u] = readtdes("log_12_2021-6-30-08-21-34.ulg",diag([1,1,0,0]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'x')
+hold on
+
+[u] = readtdes("log_2_2021-6-30-08-02-52.ulg",diag([0,1,0,1]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'o')
+hold on
+
+[u] = readtdes("log_9_2021-6-30-08-15-34.ulg",diag([1,0,1,0]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'o')
+hold on
+
+[u] = readtdes("log_3_2021-6-30-08-03-22.ulg",diag([0,0,0,1]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'+')
+hold on
+
+[u] = readtdes("log_6_2021-6-30-08-09-14.ulg",diag([0,1,0,0]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'+')
+hold on
+
+[u] = readtdes("log_10_2021-6-30-08-16-04.ulg",diag([0,0,1,0]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'+')
+hold on
+
+[u] = readtdes("log_13_2021-6-30-08-22-04.ulg",diag([1,0,0,0]),M);
+sizeMarker = linspace(1, 20, length(u));
+scatter(u(:,3),u(:,2),sizeMarker,'+')
+hold on
+
+xlim([-0.7 0.7])
+ylim([-0.7 0.7])
+xlabel("$\tau_q$",'Interpreter',"latex")
+ylabel("$\tau_p$",'Interpreter',"latex")
+ax = gca;
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
+legend("\#1 failure","\#3 failure","\#2 failure","\#4 failure", ...
+    "\#1 \#2 failure","\#3 \#4 failure","\#2 \#1 failure","\#4 \#3 failure", ...
+    "\#1 \#3 failure","\#2 \#4 failure", ...
+    "\#1 \#2 \#3 failure","\#3 \#4 \#1 failure","\#2 \#1 \#4 failure","\#4 \#3 \#2 failure",...
+    'Position',[0.27140454525354 0.0216040580123112 0.651603562675248 0.334623437107357],...
+    'Interpreter',"latex",'Orientation','horizontal','NumColumns',2);
+annotation('arrow',[0.266025641025641 0.921474358974359],...
+    [0.58894708994709 0.58894708994709]);
+annotation('arrow',[0.594551282051282 0.594551282051282],...
+    [0.228513227513228 0.96031746031746]);
 %%
 function [u] = readtdes(ulogfile,Lambda,M)
 ulogOBJ = ulogreader(ulogfile);
