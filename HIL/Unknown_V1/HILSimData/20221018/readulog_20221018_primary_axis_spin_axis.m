@@ -8,7 +8,7 @@ shownlength = 820;
 figure(1);
 clf
 
-[time, n, n_b_e] = readn("log_1_2021-6-30-08-02-22.ulg");
+[time, n, n_b_e,Tdes] = readn("log_1_2021-6-30-08-02-22.ulg");
 subplot(4,3,[1,4,7])
 samplevectorcolorR = linspace(0,0.850,shownlength);
 samplevectorcolorG = linspace(0.447,0.325,shownlength);
@@ -142,17 +142,19 @@ function drawsphere(a,b,c,R)
 %     surf(x,y,z,'LineStyle','none','FaceAlpha','0.3');
 end
 %%
-function [time, n, n_b_e] = readn(ulogfile)
+function [time, n, n_b_e, Tdes] = readn(ulogfile)
 ulogOBJ = ulogreader(ulogfile);
 msg = readTopicMsgs(ulogOBJ);
 % 获取 vehicle_attitude 数据
 vehicle_attitude = msg.TopicMessages{findtopic(msg.TopicNames, 'vehicle_attitude')};
+unknown_logger = msg.TopicMessages{findtopic(msg.TopicNames, 'unknown_logger')};
 % 生成相对时间
 log_time = vehicle_attitude.timestamp;
 time = seconds(log_time);
 [time_size,~] = size(time);
 % 数据获取:
 q = vehicle_attitude.q;
+Tdes = unknown_logger.tdes;
 % 数据处理:
 n = zeros(time_size,3);
 n_b_e = zeros(time_size,3);

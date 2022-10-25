@@ -3,7 +3,7 @@
 clear
 clc
 figure_configuration_IEEE_standard
-%% 画图
+%% 画图 一个旋翼失效
 figure(1);
 clf
 
@@ -47,13 +47,13 @@ ylabel("y")
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
-%%
+%% 两个相邻旋翼失效
 shownHome = 3500;
 shownEnd = 5000;
 shownlength = shownEnd-shownHome+1; 
 shownlengthRange = shownHome:shownEnd;
 
-[time, n, n_b_e] = readn("log_1_2021-6-30-08-03-38.ulg");
+[time, n, n_b_e,~,~,Tdes] = readn("log_1_2021-6-30-08-03-38.ulg");
 subplot(4,4,[2,6,10])
 samplevectorcolorR = linspace(0,0.850,shownlength);
 samplevectorcolorG = linspace(0.447,0.325,shownlength);
@@ -88,7 +88,7 @@ ylabel("y")
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
-%%
+%% 两个对角旋翼失效
 shownHome = 3000;
 shownEnd = 6000;
 shownlength = shownEnd-shownHome+1; 
@@ -129,7 +129,7 @@ ylabel("y")
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
-%%
+%% 三个旋翼失效
 shownHome = 3000;
 shownEnd = 6000;
 shownlength = shownEnd-shownHome+1; 
@@ -195,7 +195,7 @@ function drawsphere(a,b,c,R)
 %     surf(x,y,z,'LineStyle','none','FaceAlpha','0.3');
 end
 %%
-function [time, n, n_b_e,h1d,h2d] = readn(ulogfile)
+function [time, n, n_b_e,h1d,h2d,Tdes] = readn(ulogfile)
 ulogOBJ = ulogreader(ulogfile);
 msg = readTopicMsgs(ulogOBJ);
 % 获取 vehicle_attitude 数据
@@ -209,6 +209,7 @@ time = seconds(log_time);
 q = vehicle_attitude.q;
 h1d = unknown_logger.h1d;
 h2d = unknown_logger.h2d;
+Tdes = unknown_logger.tdes;
 % 数据处理:
 n = zeros(time_size,3);
 n_b_e = zeros(time_size,3);
