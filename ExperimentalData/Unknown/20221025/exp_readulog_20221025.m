@@ -35,7 +35,7 @@ time_unknown_logger = seconds(log_time);
 Tdes = unknown_logger.tdes;
 %% 数据处理:
 shownHome = 3000;
-shownEnd = 3700;
+shownEnd = 4050;
 shownlength = shownEnd-shownHome+1; 
 shownlengthRange = shownHome:shownEnd;
 n = zeros(time_size,3);
@@ -71,13 +71,14 @@ zlabel("z")
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
+ax.View = [-135.240692185176 38.0033333851553];
 
 subplot(3,2,2)
 plot(time(:)-time(1),n_b_e)
 % xlabel("Time [s]")
 legend("$n_x$","$n_y$","$n_z$",'Interpreter',"latex",'Orientation','horizontal')
 title("Rotation Axis")
-xlim([0,20])
+xlim([0,30])
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
@@ -87,12 +88,10 @@ plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
 xlabel("Time [s]")
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
-xlim([0,20])
+xlim([0,30])
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
-% ax.View = [52.7013669854862 29.4383187247844];
-
 
 subplot(3,2,[5,6])
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,1),'-')
@@ -102,8 +101,8 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
-title("Rotors Thrust (N)")
-xlim([0,20])
+title("Desired Rotors Thrust (N)")
+xlim([0,30])
 xlabel("Time [s]")
 legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
 ax = gca;

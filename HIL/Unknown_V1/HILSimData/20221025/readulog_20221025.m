@@ -11,9 +11,9 @@ M = ([ 1          1          1         1;
        0.7071*l  -0.7071*l  -0.7071*l  0.7071*l;
        c         -c          c        -c]);
 %% log说明：两个均为单旋翼失效的瞬间切换，不是逐渐切换过程，参数和实验保持一致
-% k_rotor = 1.6(log_3) k_omega = 12
-% k_rotor = 1.8(log_4) k_omega = 12
-ulogOBJ = ulogreader("log_3_2021-6-30-08-01-26.ulg");
+% k_rotor = 2.0(log_6) k_omega = 12
+
+ulogOBJ = ulogreader("log_8_2021-6-30-08-04-26.ulg");
 msg = readTopicMsgs(ulogOBJ);
 % 获取 vehicle_attitude 数据
 vehicle_attitude = msg.TopicMessages{findtopic(msg.TopicNames, 'vehicle_attitude')};
@@ -36,8 +36,8 @@ time_unknown_logger = seconds(log_time);
 [time_size_unknown_logger,~] = size(unknown_logger);
 Tdes = unknown_logger.tdes;
 %% 数据处理:
-shownHome = 1;
-shownEnd = 1300;
+shownHome = 1500;
+shownEnd = 2400;
 shownlength = shownEnd-shownHome+1; 
 shownlengthRange = shownHome:shownEnd;
 n = zeros(time_size,3);
@@ -73,13 +73,14 @@ zlabel("z")
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
+ax.View = [-132.368317337755 38.8042781025431];
 
 subplot(3,2,2)
 plot(time(:)-time(1),n_b_e)
 % xlabel("Time [s]")
 legend("$n_x$","$n_y$","$n_z$",'Interpreter',"latex",'Orientation','horizontal')
 title("Rotation Axis")
-xlim([0,20])
+xlim([0,40])
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
@@ -89,11 +90,11 @@ plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
 xlabel("Time [s]")
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
-xlim([0,20])
+xlim([0,40])
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
-% ax.View = [52.7013669854862 29.4383187247844];
+% 
 
 
 subplot(3,2,[5,6])
@@ -104,8 +105,8 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
-title("Rotors Thrust (N)")
-xlim([0,20])
+title("Desired Rotors Thrust (N)")
+xlim([0,40])
 xlabel("Time [s]")
 legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
 ax = gca;

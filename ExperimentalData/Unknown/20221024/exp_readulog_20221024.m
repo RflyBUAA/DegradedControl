@@ -10,7 +10,7 @@ M = ([ 1          1          1         1;
       -0.7071*l  -0.7071*l   0.7071*l  0.7071*l;
        0.7071*l  -0.7071*l  -0.7071*l  0.7071*l;
        c         -c          c        -c]);
-%% log序号中：两个相邻旋翼失效的
+%% log序号中：两个相邻旋翼失效的 角速率增益14 电机增益1.3
 ulogOBJ = ulogreader("log_0_2022-10-24-22-31-22.ulg");
 msg = readTopicMsgs(ulogOBJ);
 % 获取 vehicle_attitude 数据
