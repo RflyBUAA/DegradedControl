@@ -17,5 +17,5 @@ float32 h2d
 #float32[3] d
 #float32 h3
 #float32[3] u_d
-float32 loe
-float32 ch7
+#float32 loe
+#float32 ch7
