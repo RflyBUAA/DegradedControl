@@ -96,7 +96,7 @@ plot(time,primary_axis(:,2))
 hold on
 plot(time,primary_axis(:,3))
 ylabel('$\mathbf{n}_3$','Interpreter',"latex")
-legend('$h_1$','$h_2$','$h_3$','Orientation',"horizontal",'Interpreter',"latex",'Location',"best")
+legend('$n_{3,x}$','$n_{3,y}$','$n_{3,z}$','Orientation',"horizontal",'Interpreter',"latex",'Location',"best")
 %% sensor_combined
 
 sensor_combined = msg.TopicMessages{findtopic(msg.TopicNames, 'sensor_combined')};

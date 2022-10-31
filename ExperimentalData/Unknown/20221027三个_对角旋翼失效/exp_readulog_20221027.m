@@ -11,15 +11,16 @@ M = ([ 1          1          1         1;
        0.7071*l  -0.7071*l  -0.7071*l  0.7071*l;
        c         -c          c        -c]);
 %% log说明：14（角速率环）1.3（电机环）三个旋翼失效画图
-% log_0：主要为一侧旋翼失效 
+% log_0：主要为一侧旋翼失效，两个旋翼失效，两个在转 
 % log_1：时间较短
 % log_2: 对角旋翼失效
 % log_3：三个旋翼失效（伪，有静速） 
 % log_4-8是去除loe ch7 log连线后的测试，发现控制效果变好了。可能是加log后不同采样率导致的，遥控器采样率很低
+% log_4也是双旋翼失效的情况，但是两个旋翼都在转，和28日的比较就很奇怪，难道是电量的问题？
 % 基于log_8，log_9-10是三个旋翼失效（真）的
 % log_11是两个对角旋翼失效的
 
-ulogOBJ = ulogreader("log_10_2022-10-27-20-16-24.ulg");
+ulogOBJ = ulogreader("log_10_2022-10-27-20-16-24.ulg");%log_10_2022-10-27-20-16-24
 msg = readTopicMsgs(ulogOBJ);
 % 获取 vehicle_attitude 数据
 vehicle_attitude = msg.TopicMessages{findtopic(msg.TopicNames, 'vehicle_attitude')};
@@ -45,6 +46,9 @@ Tdes = unknown_logger.tdes;
 % LOE = unknown_logger.loe;
 % CH7 = unknown_logger.ch7;
 CH7 = input_rc.values(:,7);
+CH6 = input_rc.values(:,6);
+log_time = input_rc.timestamp;
+time_input_rc = seconds(log_time);
 %% 数据处理:
 shownHome = 7000;
 shownEnd = 8000;
@@ -133,7 +137,10 @@ ax.GridLineStyle = '-';
 % ax.GridLineStyle = '-';
 
 figure(2)
-plot(CH7)
+clf
+plot(time_input_rc-time_input_rc(1),CH7)
+hold on
+plot(time_input_rc-time_input_rc(1),CH6)
 %% 绘制球面
 function drawsphere(a,b,c,R)
 % 以(a,b,c)为球心，R为半径

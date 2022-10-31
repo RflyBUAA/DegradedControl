@@ -19,7 +19,7 @@ M = ([ 1          1          1         1;
 % log_9-10是12(角速率环)+1.6(电机环)参数下的瞬间切换，是拨杆一步到位的那种
 % log_11-12是14(角速率环)+1.3(电机环)的参数的瞬间切换，是拨杆一步到位的那种，相比前者其切换后位置漂移更大
 
-ulogOBJ = ulogreader("log_0_2022-10-26-19-40-46.ulg");
+ulogOBJ = ulogreader("log_0_2022-10-26-19-40-46.ulg");%log_0_2022-10-26-19-40-46.ulg
 msg = readTopicMsgs(ulogOBJ);
 % 获取 vehicle_attitude 数据
 vehicle_attitude = msg.TopicMessages{findtopic(msg.TopicNames, 'vehicle_attitude')};
