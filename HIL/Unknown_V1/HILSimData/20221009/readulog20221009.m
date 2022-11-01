@@ -57,16 +57,16 @@ legend('$6$','Orientation',"horizontal",'Interpreter',"latex",'Location',"best")
 s = figure(2);
 s.Position = [0 0 13.2 10];
 clf
-plot(time_2-50, h3_2);
+plot(time_2-50, h3_2,"-");
 
 hold on
-plot(time_3-55, h3_3);
+plot(time_3-55, h3_3,"--");
 
 hold on
-plot(time_4-53, h3_4);
+plot(time_4-53, h3_4,"-.");
 
 hold on
-plot(time_5-50, h3_5);
+plot(time_5-50, h3_5,":");
 
 % hold on
 % plot(time_6-210, h3_6);

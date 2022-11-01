@@ -7,10 +7,10 @@ float32[4] tdes
 #float32[2] pqd
 #float32 h1
 #float32 h2
-float32 h1d
-float32 h2d
-#float32[2] pos
-#float32[2] posd
+#float32 h1d
+#float32 h2d
+float32[2] pos
+float32[2] posd
 #float32[3] u_c
 #float32[3] hat_d
 #float32[3] u
