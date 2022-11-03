@@ -71,7 +71,7 @@ quiver3(0,0,0,-0.1,0,0.995, ...
 xlabel("x")
 ylabel("y")
 zlabel("z")
-title("Two Adjacent Rotors Failure")
+title("Two Adjacent Rotor Failure")
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
@@ -112,7 +112,7 @@ quiver3(0,0,0,-0.1,0,0.995, ...
 xlabel("x")
 ylabel("y")
 zlabel("z")
-title("Two Opposite Rotors Failure")
+title("Two Opposite Rotor Failure")
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
@@ -152,7 +152,7 @@ quiver3(0,0,0,-0.1,0,0.995, ...
 xlabel("x")
 ylabel("y")
 zlabel("z")
-title("Three Rotors Failure")
+title("Three Rotor Failure")
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
