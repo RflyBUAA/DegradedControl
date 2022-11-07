@@ -56,28 +56,29 @@ for i = 1:time_size
 end
 % 画图
 s = figure(2);
-s.Position = [0 0 13.2000 16.000];
+s.Position = [0,0,60,18];
 clf
 subplot(4,4,1)
-plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1))
+plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,1))
 ax = gca;
 ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','vertical','Location','best')
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
 title(['One Rotor Failure';'Position X(m)    ']);
 xlim([5,80])
-ylim([-2,15])
+ylim([-3,15])
 
 subplot(4,4,5)
-plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2))
+plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,2))
 ax = gca;
 ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','vertical','Location','best')
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
 title("Position Y(m)")
 xlim([5,80])
+ylim([-24,15])
 
 subplot(4,4,9)
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,1),'-')
@@ -95,7 +96,11 @@ ax = gca;
 ax.GridLineStyle = '-';
 
 subplot(4,4,13)
-plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
 xlabel("Time [s]")
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
@@ -152,24 +157,26 @@ for i = 1:time_size
 end
 % 画图
 subplot(4,4,2)
-plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1))
+plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,1))
 ax = gca;
 ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','vertical','Location','best')
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
 title(['Two Adjacent Rotor Failure';'Position X(m)             ']);
 xlim([0,90])
+ylim([-4,25])
 
 subplot(4,4,6)
-plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2))
+plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,2))
 ax = gca;
 ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','vertical','Location','best')
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
 title("Position Y(m)")
 xlim([0,90])
+ylim([-25,15])
 
 subplot(4,4,10)
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,1),'-')
@@ -188,7 +195,11 @@ ax = gca;
 ax.GridLineStyle = '-';
 
 subplot(4,4,14)
-plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
 xlabel("Time [s]")
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
@@ -244,7 +255,7 @@ for i = 1:time_size
 end
 % 画图
 subplot(4,4,3)
-plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1))
+plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,1))
 ax = gca;
@@ -252,10 +263,10 @@ ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
 title(['Two Opposite Rotor Failure';'Position X(m)             ']);
 xlim([10,50])
-ylim([-5,10])
+ylim([-8,10])
 
 subplot(4,4,7)
-plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2))
+plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,2))
 ax = gca;
@@ -281,7 +292,11 @@ ax = gca;
 ax.GridLineStyle = '-';
 
 subplot(4,4,15)
-plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
 xlabel("Time [s]")
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
@@ -338,7 +353,7 @@ for i = 1:time_size
 end
 % 画图
 subplot(4,4,4)
-plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1))
+plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,1))
 ax = gca;
@@ -348,7 +363,7 @@ title(['Three Rotor Failure';'   Position X(m)   ']);
 xlim([10,80])
 
 subplot(4,4,8)
-plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2))
+plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,2))
 ax = gca;
@@ -356,6 +371,7 @@ ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
 title("Position Y(m)")
 xlim([10,80])
+ylim([-18,5])
 
 subplot(4,4,12)
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,1),'-')
@@ -374,7 +390,11 @@ ax = gca;
 ax.GridLineStyle = '-';
 
 subplot(4,4,16)
-plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
 xlabel("Time [s]")
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")

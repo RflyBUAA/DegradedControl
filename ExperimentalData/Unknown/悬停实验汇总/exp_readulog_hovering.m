@@ -48,7 +48,7 @@ for i = 1:time_size
 end
 % 画图
 s=figure(1);
-% s.PaperPosition(3) = 40;
+s.Position = [0,0,60,25];
 clf
 subplot(4,4,[1,5])
 samplevectorcolorR = linspace(0,0.850,shownlength);
@@ -86,10 +86,15 @@ title("Recovery From One Rotor Failure")
 % ax.GridLineStyle = '-';
 
 subplot(4,4,9)
-plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
 xlim([12,35])
+ylim([-30,10])
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
@@ -181,10 +186,15 @@ title("Two Adjacent Rotor Failure")
 % ax.GridLineStyle = '-';
 
 subplot(4,4,10)
-plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
 xlim([10,40])
+ylim([-43,20])
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
@@ -283,11 +293,15 @@ title("Two Opposite Rotor Failure")
 % ax.GridLineStyle = '-';
 
 subplot(4,4,11)
-plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
 xlim([10,28])
-ylim([-43,24])
+ylim([-43,15])
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
@@ -387,11 +401,15 @@ title("Three Rotor Failure")
 % ax.GridLineStyle = '-';
 
 subplot(4,4,12)
-plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad)
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
+hold on
+plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
 xlim([14,40])
-ylim([-43,24])
+ylim([-43,20])
 %属性设置
 ax = gca;
 ax.GridLineStyle = '-';
