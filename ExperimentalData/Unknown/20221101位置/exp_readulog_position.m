@@ -62,6 +62,14 @@ subplot(4,4,1)
 plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,1))
+
+hold on
+area([0,12.5],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([12.5,80],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 ax = gca;
 ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
@@ -73,6 +81,14 @@ subplot(4,4,5)
 plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,2))
+
+hold on
+area([0,12.5],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([12.5,80],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 ax = gca;
 ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
@@ -88,6 +104,14 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
+
+hold on
+area([0,12.5],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([12.5,80],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 title("Desired Rotors Thrust (N)")
 xlim([5,80])
 ylim([0,12])
@@ -101,8 +125,16 @@ hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
 hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
+
+hold on
+area([0,12.5],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([12.5,80],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 xlabel("Time [s]")
-legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$p$","$q$","$r$","fault-free","\#1 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
 title("Body Angular Rate (rad/s)")
 xlim([5,80])
 ylim([-25, 12])
@@ -160,6 +192,17 @@ subplot(4,4,2)
 plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,1))
+
+hold on
+area([0,14.8],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([14.8,23.4],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([23.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 ax = gca;
 ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
@@ -171,6 +214,17 @@ subplot(4,4,6)
 plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,2))
+
+hold on
+area([0,14.8],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([14.8,23.4],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([23.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 ax = gca;
 ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
@@ -186,6 +240,17 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
+
+hold on
+area([0,14.8],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([14.8,23.4],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([23.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 title("Desired Rotors Thrust (N)")
 xlim([0,90])
 ylim([0,12])
@@ -200,8 +265,19 @@ hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
 hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
+
+hold on
+area([0,14.8],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([14.8,23.4],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([23.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 xlabel("Time [s]")
-legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$p$","$q$","$r$","fault-free","\#1 fails","\#1,\#2 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
 title("Body Angular Rate (rad/s)")
 xlim([0,90])
 ylim([-45,30])
@@ -258,6 +334,17 @@ subplot(4,4,3)
 plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,1))
+
+hold on
+area([0,11.2],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([11.2,21.4],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([21.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 ax = gca;
 ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
@@ -269,6 +356,17 @@ subplot(4,4,7)
 plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,2))
+
+hold on
+area([0,11.2],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([11.2,21.4],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([21.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 ax = gca;
 ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
@@ -283,6 +381,17 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
+
+hold on
+area([0,11.2],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([11.2,21.4],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([21.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 title("Desired Rotors Thrust (N)")
 xlim([10,50])
 ylim([0,12])
@@ -297,8 +406,19 @@ hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
 hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
+
+hold on
+area([0,11.2],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([11.2,21.4],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([21.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 xlabel("Time [s]")
-legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$p$","$q$","$r$","fault-free","\#1 fails","\#1,\#3 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
 title("Body Angular Rate (rad/s)")
 xlim([10,50])
 ylim([-45,18])
@@ -356,6 +476,17 @@ subplot(4,4,4)
 plot(time_unknown_logger-time_unknown_logger(1),Posd(:,1),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,1))
+
+hold on
+area([0,14.2],[50,50],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([14.2,27.4],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([27.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 ax = gca;
 ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
@@ -366,6 +497,17 @@ subplot(4,4,8)
 plot(time_unknown_logger-time_unknown_logger(1),Posd(:,2),'--')
 hold on 
 plot(time_unknown_logger-time_unknown_logger(1),Pos(:,2))
+
+hold on
+area([0,14.2],[30,30],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([14.2,27.4],[30,30],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([27.4,100],[30,30],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 ax = gca;
 ax.GridLineStyle = '-';
 legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
@@ -381,6 +523,17 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
+
+hold on
+area([0,14.2],[30,30],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([14.2,27.4],[30,30],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([27.4,100],[30,30],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 title("Desired Rotors Thrust (N)")
 xlim([10,80])
 ylim([0,12])
@@ -395,8 +548,20 @@ hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
 hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
+
+hold on
+area([0,14.2],[30,30],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([14.2,27.4],[30,30],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([27.4,100],[30,30],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 xlabel("Time [s]")
-legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$p$","$q$","$r$","fault-free","\#1 fails","\#1,\#2,\#3 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
+
 title("Body Angular Rate (rad/s)")
 xlim([10,80])
 ylim([-45,25])

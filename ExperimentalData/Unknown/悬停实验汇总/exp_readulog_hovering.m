@@ -91,6 +91,15 @@ hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
 hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
+
+hold on
+area([0,13.3],[20,20],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([13.3,40],[20,20],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+% annotation('textbox',[0.324515941476541 0.46672512808502 0.0330729158124369 0.0306916660673917],'Color','#ffa04d','String','#1 fails','FaceAlpha',0,'EdgeColor','none');
+
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
 xlim([12,35])
@@ -107,10 +116,18 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
+
+hold on
+area([0,13.3],[10,10],'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([13.3,40],[10,10],'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 title("Desired Rotors Thrust (N)")
 xlim([12,35])
 xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
 ax.GridLineStyle = '-';
 
@@ -191,6 +208,17 @@ hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
 hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
+
+hold on
+area([0,12.5],[20,20],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([12.5,19.3],[20,20],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([19.3,40],[20,20],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
 xlim([10,40])
@@ -209,10 +237,21 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
+
+hold on
+area([0,12.5],[10,10],'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([12.5,19.3],[10,10],'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([19.3,40],[10,10],'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 title("Desired Rotors Thrust (N)")
 xlim([10,40])
 xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#2 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
 ax.GridLineStyle = '-';
 
@@ -298,6 +337,17 @@ hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
 hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
+
+hold on
+area([0,11],[20,20],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([11,15.4],[20,20],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([15.4,40],[20,20],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
 xlim([10,28])
@@ -314,10 +364,21 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
+
+hold on
+area([0,11],[10,10],'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([11,15.4],[10,10],'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([15.4,40],[10,10],'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 title("Desired Rotors Thrust (N)")
 xlim([10,28])
 xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#3 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
 ax.GridLineStyle = '-';
 
@@ -406,6 +467,17 @@ hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,2),'--')
 hold on
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,3),'-.')
+
+hold on
+area([0,15],[20,20],-50,'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([15,22.5],[20,20],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([22.5,40],[20,20],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal')
 title("Body Angular Rate (rad/s)")
 xlim([14,40])
@@ -422,10 +494,21 @@ hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,3),'-.')
 hold on
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,4),':')
+
+hold on
+area([0,15],[10,10],'FaceColor','#c0e2c0','EdgeColor','#c0e2c0','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([15,22.5],[10,10],'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlpha',.3,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+hold on
+area([22.5,40],[10,10],'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.15,'EdgeAlpha',.0, ...
+    'ShowBaseLine',"off",'LineWidth',5)
+
 title("Desired Rotors Thrust (N)")
 xlim([14,40])
 xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#2,\#3 fail",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
 ax.GridLineStyle = '-';
 %% 绘制球面
