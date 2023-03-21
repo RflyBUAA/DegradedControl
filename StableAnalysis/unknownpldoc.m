@@ -1,117 +1,91 @@
-[p1 p2 p3] = unknownDOC3(0.6)
-% [p1, p2, p3] = controldeg3(0.0104, 0.0056, -20, 0.001, 0.6)
+clear
+clc
+% [p11, p21, p31, Qc1, Q1] = unknownDOC3(0.6,-20);
+% [p12, p22, p32, Qc2, Q2] = controldeg2(0.0104, 0.0056, -20, 0, 0.6);
+% eigQ1 = abs(eig(Q1))
+% eigQ2 = abs(eig(Q2))
 
-function [p1, p2, p3] = unknownDOC(k_cp)
+k_cp = 0:0.01:1;
+[~,n] = size(k_cp);
+for i = 1:n
+    [~, p1(i),~,~,~] = controldeg2(0.0104, 0.0056, -20, 0, k_cp(i));
+end
+figure(1)
+plot(k_cp, p1)
+%%
+figure(2)
+r = 0:0.01:40;
+[~, n] = size(r);
+k_cp = 0:0.2:1;
+[~, n2] = size(k_cp);
+j = 1:n2
+for i = 1:n
+    [~,~, p1(i),~,~] = controldeg2(0.0104, 0.0056, -r(i), 0, k_cp(1));
+end
+plot(r,p1)
+hold on
+
+for i = 1:n
+    [~,~,p2(i),~,~] = controldeg2(0.0104, 0.0056, -r(i), 0, k_cp(2));
+end
+plot(r,p2)
+hold on
+
+for i = 1:n
+    [~, ~,p3(i),~,~] = controldeg2(0.0104, 0.0056, -r(i), 0, k_cp(3));
+end
+plot(r,p3)
+hold on
+
+for i = 1:n
+    [~, ~,p4(i),~,~] = controldeg2(0.0104, 0.0056, -r(i), 0, k_cp(4));
+end
+plot(r,p4)
+hold on
+
+for i = 1:n
+    [~, ~, p5(i),~,~] = controldeg2(0.0104, 0.0056, -r(i), 0, k_cp(5));
+end
+plot(r,p5)
+hold on
+
+%%
+
+
+function [p1, p2, p3, Qc, Q] = unknownDOC3(k_cp, r)
 J_x = 0.0056;
 J_y = 0.0056;
 J_z = 0.0104;
 
-k_omega = 14;
-k_v_z = 1;
-K_2 = diag([k_v_z, k_omega, k_omega]);
+A_2 = [0     -(k_cp+1)*(J_z-J_y)/J_x*r; 
+       -(k_cp+1)*(J_x-J_z)/J_y*r     0];
 
-% k_cp = 0.6;
-r = -20;
-A_2 = [0 0 0;
-       0 0 -r*(J_z-J_y)/J_x; 
-       0 -r*(J_x-J_z)/J_y 0];
+B_2 = [1/J_x  0;
+       0      1/J_y];
 
-n_3_z = 0.9;
-k_n_3 = 3;
-G_3 = [0 0 0;
-        0 -n_3_z*k_n_3 0;
-        0 0 -n_3_z*k_n_3];
-syms A B C D
-A_1 = [-C A;-D B]*[zeros(2,1) eye(2)];
+AA = A_2;
+BB = B_2;
 
-AA = [zeros(2,2) A_1;zeros(3,2) (-K_2 + k_cp*A_2 + G_3)];
-BB = [zeros(2,3);(K_2 - k_cp*A_2)];
-Qc = [BB, AA*BB, AA*AA*BB AA*AA*AA*BB AA*AA*AA*AA*BB]
-p1 = min(eig(Qc'*Qc));
+Qc = [BB, AA*BB];
+Q = Qc'*Qc;
+p1 = min((eig(Qc'*Qc)));
 p2 = 3/trace(inv(Qc'*Qc));
 p3 = (abs(det(Qc'*Qc)))^(1/3);
 end
 
-
-function [p1, p2, p3] = unknownDOC2(k_cp)
-J_x = 0.0056;
-J_y = 0.0056;
-J_z = 0.0104;
-
-k_omega = 14;
-k_v_z = 1;
-K_2 = diag([k_v_z, k_omega, k_omega]);
-
-% k_cp = 0.6;
-r = -20;
-A_2 = [0 0 0;
-       0 0 -r*(J_z-J_y)/J_x; 
-       0 -r*(J_x-J_z)/J_y 0];
-
-n_3_z = 0.9;
-k_n_3 = 3;
-G_3 = [0 0 0;
-        0 -n_3_z*k_n_3 0;
-        0 0 -n_3_z*k_n_3];
-syms A B C D
-A_1 = [-C A;-D B]*[zeros(2,1) eye(2)];
-m=0.710;
-B_2 = [-n_3_z/m 0 0;0 1/J_x 0;0 0 1/J_y];
-AA = [zeros(2,2) A_1;zeros(3,2) (k_cp+1)*A_2];
-BB = [zeros(2,3); B_2];
-Qc = [BB, AA*BB, AA*AA*BB AA*AA*AA*BB AA*AA*AA*AA*BB]
-p1 = min(eig(Qc'*Qc));
-p2 = 3/trace(inv(Qc'*Qc));
-p3 = (abs(det(Qc'*Qc)))^(1/3);
-
-end
-
-function [p1, p2, p3] = unknownDOC3(k_cp)
-J_x = 0.0056;
-J_y = 0.0056;
-J_z = 0.0104;
-
-k_omega = 14;
-k_v_z = 1;
-K_2 = diag([k_v_z, k_omega, k_omega]);
-
-% k_cp = 0.6;
-r = -20;
-A_2 = [0 0 0;
-       0 0 -r*(J_z-J_y)/J_x; 
-       0 -r*(J_x-J_z)/J_y 0];
-
-n_3_z = 0.9;
-k_n_3 = 3;
-G_3 = [0 0 0;
-        0 -n_3_z*k_n_3 0;
-        0 0 -n_3_z*k_n_3];
-syms A B C D
-A_1 = [-C A;-D B]*[zeros(2,1) eye(2)];
-m=0.710;
-B_2 = [-n_3_z/m 0 0;0 1/J_x 0;0 0 1/J_y];
-AA = [(k_cp+1)*A_2];
-BB = [B_2];
-Qc = [BB, AA*BB, AA*AA*BB]
-p1 = min(eig(Qc'*Qc));
-p2 = 3/trace(inv(Qc'*Qc));
-p3 = (abs(det(Qc'*Qc)))^(1/3);
-
-end
-
-function [p1, p2, p3] = controldeg3(J_z, J, omega_0z, kr, kcp)
-k = kcp*(J_z/J-1);
+function [p1, p2, p3, Qc, Q] = controldeg2(J_z, J, omega_0z, kr, kcp)
+k = (kcp+1)*(J_z/J-1);
 k_rJ = kr/J;
 
-A = [0   omega_0z   0     -1;...
-     -omega_0z   0   1     0;...
-     0    0    -k_rJ     -k*omega_0z;...
-     0    0   k*omega_0z  -k_rJ];
-B = [0;0;J^-1;0];
+A = [0     -k*omega_0z;...
+     k*omega_0z  0];
+B = [1/J;
+    0 ];
 
-Qc = [B, A*B, A*A*B, A*A*A*B]
+Qc = [B, A*B];
+Q = Qc'*Qc;
 % 计算可控度
-p1 = min(eig(Qc'*Qc));
+p1 = min((eig(Qc'*Qc)));
 p2 = 3/trace(inv(Qc'*Qc));
 p3 = (abs(det(Qc'*Qc)))^(1/3);
 end
