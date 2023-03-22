@@ -21,6 +21,12 @@ MY_SAT_AD = Pixhawk_CSC.Parameter({single(0.13), 'MY_SAT_AD'} );
 
 MY_K_CP = Pixhawk_CSC.Parameter({single(0.6), 'MY_K_CP'} );
 
+% 四个电机的效率系数
+MY_ROTOR1 = Pixhawk_CSC.Parameter({single(1), 'MY_ROTOR1'} );
+MY_ROTOR2 = Pixhawk_CSC.Parameter({single(1), 'MY_ROTOR2'} );
+MY_ROTOR3 = Pixhawk_CSC.Parameter({single(1), 'MY_ROTOR3'} );
+MY_ROTOR4 = Pixhawk_CSC.Parameter({single(1), 'MY_ROTOR4'} );
+
 Ts = 1/400;%1/400
 % 虽然理论推导显示，Tmotor=Tmotorbar=Tkd
 % 但是实际仿真发现，Tmotorbar=Tkd>Tmotor的时候位置收敛会变快，超调会减少，其他参数搭配方式目前还没尝试
