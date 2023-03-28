@@ -72,7 +72,7 @@ plot(time_5-50, h3_5,":");
 % plot(time_6-210, h3_6);
 
 xlim([0,30])
-xlabel('Time [s]','Interpreter',"latex")
+xlabel('Time [s]')
 ylim([0.9,1])
 ylabel('$n_{3,z}$','Interpreter','latex')
 legend(...

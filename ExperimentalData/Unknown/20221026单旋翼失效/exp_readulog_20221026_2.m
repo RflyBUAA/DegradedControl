@@ -85,12 +85,13 @@ xlabel("$\tau_q$",'Interpreter',"latex")
 ylabel("$\tau_p$",'Interpreter',"latex")
 colormap(colorMarker');
 colorbar( 'south','Ticks',[0,1],'TickLabels',{'12s','25s'})
-legend("Moment Point", 'Interpreter',"latex",'Location',"northeast",'Box',"on")
+legend("Moment Point", 'Interpreter',"latex",'Location',"northeast",'Box',"on","FontSize",9)
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = ':';
 ax.XAxisLocation = 'origin';
 ax.YAxisLocation = 'origin';
+ax.FontSize = 9;
 annotation('arrow',[0.5949 0.5949],[0.2234 0.9835])
 annotation('arrow',[0.2562 0.9553],[0.5950 0.5950])
 

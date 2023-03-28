@@ -48,6 +48,7 @@ for i = 1:time_size
 end
 % 画图
 s=figure(1);
+% s.Position = [0,0,60,25];
 s.Position = [0,0,60,25];
 clf
 subplot(4,4,[1,5])
@@ -71,7 +72,7 @@ ylabel("y")
 zlabel("z")
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 ax.View = [-135.240692185176 38.0033333851553];
 title("Recovery From One Rotor Failure")
 
@@ -106,7 +107,7 @@ xlim([12,35])
 ylim([-30,10])
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 subplot(4,4,13)
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,1),'-')
@@ -129,7 +130,7 @@ xlim([12,35])
 xlabel("Time [s]")
 legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 
 %% log序号中：画图：两个相邻旋翼失效的 角速率增益14 电机增益1.3
@@ -189,7 +190,7 @@ ylabel("y")
 zlabel("z")
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 title("Two Adjacent Rotor Failure")
 
 % subplot(5,4,10)
@@ -225,7 +226,7 @@ xlim([10,40])
 ylim([-43,20])
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 % ax.View = [52.7013669854862 29.4383187247844];
 
 
@@ -253,7 +254,7 @@ xlim([10,40])
 xlabel("Time [s]")
 legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#2 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 %%
 ulogOBJ = ulogreader("log_11_2022-10-27-20-18-22.ulg");
@@ -316,7 +317,7 @@ ylabel("y")
 zlabel("z")
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 ax.View = [-135.240692185176 38.0033333851553];
 title("Two Opposite Rotor Failure")
 
@@ -354,7 +355,7 @@ xlim([10,28])
 ylim([-43,15])
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 subplot(4,4,15)
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,1),'-')
@@ -380,7 +381,7 @@ xlim([10,28])
 xlabel("Time [s]")
 legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#3 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 %%
 ulogOBJ = ulogreader("log_10_2022-10-27-20-16-24.ulg");%log_10_2022-10-27-20-16-24
@@ -446,7 +447,7 @@ ylabel("y")
 zlabel("z")
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 ax.View = [-135.240692185176 38.0033333851553];
 title("Three Rotor Failure")
 
@@ -484,7 +485,7 @@ xlim([14,40])
 ylim([-43,20])
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 subplot(4,4,16)
 plot(time_unknown_logger-time_unknown_logger(1),Tdes(:,1),'-')
@@ -510,7 +511,7 @@ xlim([14,40])
 xlabel("Time [s]")
 legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#2,\#3 fail",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 %% 绘制球面
 function drawsphere(a,b,c,R)
 % 以(a,b,c)为球心，R为半径

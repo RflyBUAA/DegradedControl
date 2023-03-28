@@ -71,8 +71,8 @@ area([12.5,80],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlph
     'ShowBaseLine',"off",'LineWidth',5)
 
 ax = gca;
-ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
+ax.GridLineStyle = '--';
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','northwest')
 title(['One Rotor Failure';'Position X(m)    ']);
 xlim([5,80])
 ylim([-3,15])
@@ -90,8 +90,8 @@ area([12.5,80],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlph
     'ShowBaseLine',"off",'LineWidth',5)
 
 ax = gca;
-ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
+ax.GridLineStyle = '--';
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','northwest')
 title("Position Y(m)")
 xlim([5,80])
 ylim([-24,15])
@@ -115,9 +115,9 @@ area([12.5,80],[50,50],-50,'FaceColor','#ffd8b7','EdgeColor','#ffd8b7','FaceAlph
 title("Desired Rotors Thrust (N)")
 xlim([5,80])
 ylim([0,12])
-legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal','Location','northwest')
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 subplot(4,4,13)
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
@@ -140,7 +140,7 @@ xlim([5,80])
 ylim([-25, 12])
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 %%
 %% log序号中：画图：体现位置控制 角速率增益14 电机增益1.3 
@@ -204,8 +204,8 @@ area([23.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlp
     'ShowBaseLine',"off",'LineWidth',5)
 
 ax = gca;
-ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
+ax.GridLineStyle = '--';
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','northwest')
 title(['Two Adjacent Rotor Failure';'Position X(m)             ']);
 xlim([0,90])
 ylim([-4,25])
@@ -226,8 +226,8 @@ area([23.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlp
     'ShowBaseLine',"off",'LineWidth',5)
 
 ax = gca;
-ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
+ax.GridLineStyle = '--';
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','northwest')
 title("Position Y(m)")
 xlim([0,90])
 ylim([-25,15])
@@ -255,9 +255,9 @@ title("Desired Rotors Thrust (N)")
 xlim([0,90])
 ylim([0,12])
 % xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal','Location','northwest')
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 subplot(4,4,14)
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
@@ -283,7 +283,7 @@ xlim([0,90])
 ylim([-45,30])
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 %% log序号中：画图：体现位置控制 角速率增益14 电机增益1.3
 % log_12 对角旋翼失效
@@ -346,8 +346,8 @@ area([21.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlp
     'ShowBaseLine',"off",'LineWidth',5)
 
 ax = gca;
-ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
+ax.GridLineStyle = '--';
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','southwest')
 title(['Two Opposite Rotor Failure';'Position X(m)             ']);
 xlim([10,50])
 ylim([-8,10])
@@ -368,8 +368,8 @@ area([21.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlp
     'ShowBaseLine',"off",'LineWidth',5)
 
 ax = gca;
-ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
+ax.GridLineStyle = '--';
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','southwest')
 title("Position Y(m)")
 xlim([10,50])
 
@@ -396,9 +396,9 @@ title("Desired Rotors Thrust (N)")
 xlim([10,50])
 ylim([0,12])
 % xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal','Location','northwest')
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 subplot(4,4,15)
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
@@ -424,7 +424,7 @@ xlim([10,50])
 ylim([-45,18])
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 %%
 %% log序号中：画图：体现位置控制 角速率增益14 电机增益1.3
@@ -488,8 +488,8 @@ area([27.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlp
     'ShowBaseLine',"off",'LineWidth',5)
 
 ax = gca;
-ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
+ax.GridLineStyle = '--';
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','southwest')
 title(['Three Rotor Failure';'   Position X(m)   ']);
 xlim([10,80])
 
@@ -509,8 +509,8 @@ area([27.4,100],[30,30],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlp
     'ShowBaseLine',"off",'LineWidth',5)
 
 ax = gca;
-ax.GridLineStyle = '-';
-legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','best')
+ax.GridLineStyle = '--';
+legend("Reference","Measurement",'Interpreter',"latex",'Orientation','horizontal','Location','southwest')
 title("Position Y(m)")
 xlim([10,80])
 ylim([-18,5])
@@ -538,9 +538,9 @@ title("Desired Rotors Thrust (N)")
 xlim([10,80])
 ylim([0,12])
 % xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal')
+legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal','Location','northwest')
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';
 
 subplot(4,4,16)
 plot( time_sensor_combined(:)-time_sensor_combined(1), gyro_rad(:,1),'-')
@@ -567,4 +567,4 @@ xlim([10,80])
 ylim([-45,25])
 %属性设置
 ax = gca;
-ax.GridLineStyle = '-';
+ax.GridLineStyle = '--';

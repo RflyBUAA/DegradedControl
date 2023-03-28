@@ -82,13 +82,15 @@ area([94,120],[areamax,areamax],areamin,'FaceColor','#A2142F','EdgeColor','#A214
     'ShowBaseLine',"off",'LineWidth',5)
 
 % xlabel("Time [s]")
-legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal','Location','best')
-title("Body Angular Rate (rad/s)")
+legend("$p$","$q$","$r$",'Interpreter',"latex",'Orientation','horizontal','Location','best',"FontSize",7)
+title("Body Angular Rate (rad/s)","FontSize",7)
 ylim([areamin,areamax])
 xlim([0,120])
 % 属性设置
 ax = gca;
-ax.GridLineStyle = '--';
+ax.GridLineStyle = ':';
+ax.FontSize = 7;
+
 
 %% 主轴
 subplot(3,3,[4,5,6])
@@ -120,13 +122,14 @@ area([94,120],[areamax,areamax],areamin,'FaceColor','#A2142F','EdgeColor','#A214
     'ShowBaseLine',"off",'LineWidth',5)
 
 % xlabel("Time [s]")
-legend("$n_x$","$n_y$","$n_z$",'Interpreter',"latex",'Orientation','horizontal','Location','best')
-title("Rotation Axis")
+legend("$n_x$","$n_y$","$n_z$",'Interpreter',"latex",'Orientation','horizontal','Location','best',"FontSize",7)
+title("Rotation Axis","FontSize",7)
 xlim([0,120])
 ylim([areamin,areamax])
 %属性设置
 ax = gca;
-ax.GridLineStyle = '--';
+ax.GridLineStyle = ':';
+ax.FontSize = 7;
 
 %% 期望的电机拉力
 subplot(3,3,[7,8,9])
@@ -160,12 +163,13 @@ area([94,120],[areamax,areamax],areamin,'FaceColor','#A2142F','EdgeColor','#A214
     'ShowBaseLine',"off",'LineWidth',5)
 
 ylim([0,areamax])
-title("Desired Rotors Thrust (N)")
+title("Desired Rotors Thrust (N)","FontSize",7)
 xlim([0,120])
-xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal','Location','best')
+xlabel("Time [s]","FontSize",7)
+legend("$\#1$","$\#2$","$\#3$","$\#4$",'Interpreter',"latex",'Orientation','horizontal','Location','best',"FontSize",7)
 ax = gca;
-ax.GridLineStyle = '--';
+ax.GridLineStyle = ':';
+ax.FontSize = 7;
 
 %% 绘制球面
 function drawsphere(a,b,c,R)
