@@ -252,7 +252,7 @@ area([19.3,40],[10,10],'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.
 title("Desired Rotors Thrust (N)")
 xlim([10,40])
 xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#2 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
+legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#2 fail",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
 ax.GridLineStyle = '--';
 
@@ -379,7 +379,7 @@ area([15.4,40],[10,10],'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlpha',.
 title("Desired Rotors Thrust (N)")
 xlim([10,28])
 xlabel("Time [s]")
-legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#3 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
+legend("$\#1$","$\#2$","$\#3$","$\#4$","fault-free","\#1 fails","\#1,\#3 fail",'Interpreter',"latex",'Orientation','vertical','NumColumns',4)
 ax = gca;
 ax.GridLineStyle = '--';
 

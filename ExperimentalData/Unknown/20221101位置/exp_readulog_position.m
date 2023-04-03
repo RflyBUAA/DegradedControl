@@ -277,7 +277,7 @@ area([23.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlp
     'ShowBaseLine',"off",'LineWidth',5)
 
 xlabel("Time [s]")
-legend("$p$","$q$","$r$","fault-free","\#1 fails","\#1,\#2 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
+legend("$p$","$q$","$r$","fault-free","\#1 fails","\#1,\#2 fail",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
 title("Body Angular Rate (rad/s)")
 xlim([0,90])
 ylim([-45,30])
@@ -418,7 +418,7 @@ area([21.4,100],[50,50],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlp
     'ShowBaseLine',"off",'LineWidth',5)
 
 xlabel("Time [s]")
-legend("$p$","$q$","$r$","fault-free","\#1 fails","\#1,\#3 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
+legend("$p$","$q$","$r$","fault-free","\#1 fails","\#1,\#3 fail",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
 title("Body Angular Rate (rad/s)")
 xlim([10,50])
 ylim([-45,18])
@@ -560,7 +560,7 @@ area([27.4,100],[30,30],-50,'FaceColor','#A2142F','EdgeColor','#A2142F','FaceAlp
     'ShowBaseLine',"off",'LineWidth',5)
 
 xlabel("Time [s]")
-legend("$p$","$q$","$r$","fault-free","\#1 fails","\#1,\#2,\#3 fails",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
+legend("$p$","$q$","$r$","fault-free","\#1 fails","\#1,\#2,\#3 fail",'Interpreter',"latex",'Orientation','vertical','NumColumns',3)
 
 title("Body Angular Rate (rad/s)")
 xlim([10,80])
