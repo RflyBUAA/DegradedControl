@@ -36,7 +36,7 @@ ModelParam_envLatitude = 40.1540302;
 ModelParam_GPSLatLong = [ModelParam_envLatitude ModelParam_envLongitude];
 ModelParam_envAltitude = 0; %参考高度，即当前位置海拔高度，也可认为是起飞前初始高度。向下为正
 ModelParam_envC_d = 0.055;%0.055;
-ModelParam_envC_md = [0.001 0.001 0.0002];%[0.0035 0.0039 0.0034];
+ModelParam_envC_md = [0.001 0.001 0.00006];%[0.0035 0.0039 0.0034];
     % Wind Param
     ModelParam_timeSampTurbWind = 1/50;
 % Fail Param
