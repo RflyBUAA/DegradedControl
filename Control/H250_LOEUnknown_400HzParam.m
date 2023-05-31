@@ -7,7 +7,7 @@ MY_TAU_P_P_YAW = Pixhawk_CSC.Parameter( {single(0.1), 'MY_TAU_P_P_YAW'}  );
 MY_TAU_P_A_YAW = Pixhawk_CSC.Parameter( {single(0), 'MY_TAU_P_A_YAW'}  );
 
 MY_RATE_P = Pixhawk_CSC.Parameter( {single(14), 'MY_RATE_P'}  );
-MY_RATE_P_YAW = Pixhawk_CSC.Parameter( {single(1), 'MY_RATE_P_YAW'}  );
+MY_RATE_P_YAW = Pixhawk_CSC.Parameter( {single(0.3), 'MY_RATE_P_YAW'}  );
 
 MY_ATT_P = Pixhawk_CSC.Parameter( {single(3), 'MY_ATT_P'}  );
 MY_ATT_P_YAW = Pixhawk_CSC.Parameter( {single(0), 'MY_ATT_P_YAW'}  );
