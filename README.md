@@ -2,6 +2,24 @@ The code will be further updated on https://github.com/RflyBUAA/DegradedControl.
 
 If you have any questions, please contact me by email at kcx064@163.com or kechenxu@buaa.edu.cn or ke_chenxu@buaa.edu.cn
 
+## Prerequisite: Please install the RflySim
+Please install the [RflySim](rflysim.com) to solve the error as show in the following figure
+<img width="783" height="138" alt="image" src="https://github.com/user-attachments/assets/18fbc1ee-6441-417f-aa45-517bd209a2de" />
+
+**OR**
+
+If the code generation is not need, the [RflySim](rflysim.com) is not necessary. you can change the pixhawk variable `Pixhawk_CSC.Parameter` in *.m script as norm matlab variable.
+
+For example: 
+```matlab
+MY_POS_P = Pixhawk_CSC.Parameter( {single(0.1), 'MY_POS_P'} );
+```
+change to
+```matlab
+MY_POS_P = single(0.1)
+```
+
+
 ## Passive Fault Tolerant Control MIL
 Step: run in order
 
